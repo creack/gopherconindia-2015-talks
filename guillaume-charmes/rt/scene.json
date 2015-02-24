@@ -1,0 +1,20 @@
+{
+    "window": {"w": 800, "h": 600},
+    "eye": {"position": {"x": -3000, "y": 0, "z": 0}},
+    "objects": [
+	{"type": "cone",
+	 "color": "0x0000FF",
+	 "R": 60,
+	 "position": {"x": 0, "y": -70, "z": 0}},
+	{"type": "sphere",
+	 "color": "0xFF0000",
+	 "R": 50,
+	 "position": {"x": 0, "y": -60, "z": 0}},
+	{"type": "plan",
+	 "color": "0x00FF00",
+	 "position": {"z": -50}},
+	{"type": "plan",
+	 "color": "0xFFFF00",
+	 "position": {"z": 150}}
+    ]
+}

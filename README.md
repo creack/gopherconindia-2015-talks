@@ -23,3 +23,5 @@ Principles of designing Go APIs with channels by Alan Shreve
 Go In Action - The Channel Guarantee by William Kennedy  
 [Rely Race Code](https://github.com/ArdanStudios/gotraining/blob/master/06-concurrency_channels/03-channels/example2/example2.go) | 
 [Tennis Match Code](https://github.com/ArdanStudios/gotraining/blob/master/06-concurrency_channels/03-channels/example1/example1.go)
+
+[RayTracing in Go](http://go-talks.appspot.com/github.com/IndianGuru/gopherconindia-2015-talks/guillaume-charmes/rt.slide) by Guillaume J. Charmes

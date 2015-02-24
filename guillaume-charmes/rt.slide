@@ -1,0 +1,137 @@
+Ray Tracing in Go
+21 Feb 2015
+Tags: golang, raytracer
+
+Guillaume J. Charmes
+SimpleReach, inc
+guillaume@charmes.net
+@charme_g
+http://github.com/creack/goray
+
+* What is Ray Tracing?
+
+* Principle
+
+_In_computer_graphics,_ray_tracing_is_a_technique_for_generating_an_image_by_tracing_the_path_of_light_through_pixels_in_an_image_plane_and_simulating_the_effects_of_its_encounters_with_virtual_objects._ (wikipedia)
+
+.image rt/diag.jpg _ 800
+
+* Examples
+
+Originally a first year project at [[http://www.epitech.eu][EPITECH]]
+
+.image rt/thieba_c.jpg 500 _
+
+* 
+
+.image rt/patard_a.jpg 500 _
+
+* 
+
+.image rt/pasqui_b.jpg 500 _
+
+* 
+
+.image rt/grange_s.jpg 500 _
+
+* 
+
+.image rt/albert_j.jpg 500 _
+
+* Go - What do we need?
+
+Standard Library: [[http://golang.org/pkg/image/][pkg/image]]
+
+We are going to use image.RGBA to represent our image.
+Under the hood, it is a slimple `[]uint8` with the size of the image.
+
+.link http://golang.org/src/image/image.go#L60
+
+Interesting blog post regarding images in Go:
+
+.link https://blog.golang.org/go-image-package
+
+* Now what?
+
+- Each object can be represented by an equation
+- Solve those equations
+- Retrieve the Color of the closest object
+
+* Our scene
+
+In order to generate an image, we need to describe it.
+
+.code rt/scene.json
+
+* Interface
+
+.code rt/object_iface.go
+
+* Generating the image.
+
+For each pixel, we solve the equation of all the object of the scene
+
+.code rt/calc.go
+
+* Simple Objects
+
+* Plan
+
+.code rt/plan.go
+
+* Sphere
+
+.code rt/sphere.go
+
+* Cone
+
+.code rt/cone.go
+
+* Compute the Image
+
+* First approach
+
+.code rt/compute_1.go
+
+* Parallelize
+
+.code rt/compute_parallel.go
+
+* Rendering
+
+Standard Library:
+- [[http://golang.org/pkg/image/jpeg][pkg/image/jpef]]
+- [[http://golang.org/pkg/image/git][pkg/image/gif]]
+- [[http://golang.org/pkg/image/png][pkg/image/png]]
+
+Third party:
+- [[http://code.google.com/p/x-go-binding/][x11]] (pure go!)
+
+* Parsing
+
+Want to support differents config format.
+
+Extend CLI with modules
+
+* Future of Go
+
+Shared libraries: runtime load modules
+
+- Define objects yourself without changing core code
+- Any renderer (Qt, GTK, native OS GUI integration, etc.)
+- Any parser (xml, yaml, json, toml, etc.) without touching the code
+
+* Code walkthrough
+
+* Improvements
+
+- Rotations
+- Lights / Shadows
+- Transparency
+- Textures
+
+* Thanks
+
+- Gophercon Organizers
+- Epitech
+- Julien Fortin
